@@ -1,0 +1,2 @@
+osmfilter ohrid.osm --keep="amenity=bank"| osmconvert.exe - --all-to-nodes --csv="@id @lat @lon name" 
+--csv-headline --csv-separator="," -o="banks_Ohrid.txt"
