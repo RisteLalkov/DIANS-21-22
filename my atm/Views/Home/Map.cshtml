@@ -1,0 +1,282 @@
+﻿@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+    <title>Map</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/nicepage.css" />
+    <link rel="stylesheet" href="~/css/Почетна.css" />
+    <link rel="stylesheet" href="~/css/mapaStyle.css" />
+    <link rel="stylesheet" href="~/css/Мапа.css" />
+    <link href="~/css/jquery-ui.css" rel="stylesheet" />
+
+    <script src="~/js/nicepage.js" asp-append-version="true"></script>
+    <script src="~/js/jquery.js" asp-append-version="true"></script>
+
+    <link rel="stylesheet" href="~/css/nicepage.css" />
+    <link rel="stylesheet" href="~/css/Почетна.css" />
+    <link rel="stylesheet" href="~/css/mapaStyle.css" />
+    <link rel="stylesheet" href="~/css/Мапа.css" />
+    <link rel="stylesheet" href="~/css/Банки.css" />
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
+    <style>
+
+        .marker {
+            display: block;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="u-clearfix u-header u-palette-5-dark-3 u-header" id="sec-a806">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <a href="" class="u-image u-logo u-image-1" data-image-width="300" data-image-height="205">
+                <img src="~/lib/6471825683_fbb09beb-94ae-4958-892a-36eb8e960281.png" class="u-logo-image u-logo-image-1">
+            </a>
+            <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+                    <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                                    <rect y="1" width="16" height="2"></rect>
+                                    <rect y="7" width="16" height="2"></rect>
+                                    <rect y="13" width="16" height="2"></rect>
+                                </symbol>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+                <div class="u-custom-menu u-nav-container" id="pocetnaIdr">
+                    <ul class="u-nav u-unstyled u-nav-1">
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-custom-color-1 u-text-hover-palette-4-base u-text-white" href="../Home/Index" style="padding: 14px 26px;">Почетна</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-custom-color-1 u-text-hover-palette-4-base u-text-white" href="../Home/Map" style="padding: 14px 26px;">Мапа</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-custom-color-1 u-text-hover-palette-4-base u-text-white" href="../Home/Banks" style="padding: 14px 26px 14px 26px;">Банки</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+            </nav>
+        </div>
+    </header>
+
+    <div id='map'></div>
+
+    <script>
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoicmlzdGVsYWxrb3YiLCJhIjoiY2t4bmpmdXJ0MG55MDJucno5anc3dDk5byJ9.MqiJ8MS-NPrjudZM8_GmcA';
+
+       @* navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
+            enableHighAccuracy: true
+        })
+
+        function successLocation(position) {
+            setupMap([position.coords.longitude, position.coords.latitude])
+        }
+
+        function errorLocation() {
+            setupMap([20.795963, 41.115195])
+        }
+
+        function setupMap(center) {
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center:  center,
+                zoom: 14
+            });
+        } *@
+
+             const map = new mapboxgl.Map({
+                 container: 'map',
+                 style: 'mapbox://styles/mapbox/streets-v11',
+                 center: [20.795963, 41.115195],
+                     zoom: 14
+            });
+
+        const nav = new mapboxgl.NavigationControl()
+        map.addControl(nav)
+
+        var directions = new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        })
+
+        map.addControl(directions, "top-left")
+
+        const geojson = {
+            'type': 'FeatureCollection',
+            'features': [
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Sparkasse Bank',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8013975, 41.1173318]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'TTK Banka',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8014077, 41.1155785]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Uni Bank',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8011070, 41.1135356]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'NLB Tutunska banka',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8018224, 41.1133624]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Комерцијална Банка',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8057809, 41.1105418]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Централна Кооперативна Банка',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8020711, 41.1128603]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Стопанска Банка',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8023248, 41.1121132]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Охридска Банка',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8093098, 41.1122749]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Силк Роуд Банка',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8010875, 41.1146636]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'УНИ Банка',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8009712, 41.1142269]
+                    }
+                },
+                {
+                    'type': 'Feature',
+                    'properties': {
+                        'message': 'Охридска Банка',
+                        'iconSize': [50, 50]
+                    },
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [20.8153988, 41.1173478]
+                    }
+                },
+
+            ]
+        };
+
+        for (const marker of geojson.features) {
+            // Create a DOM element for each marker.
+            const el = document.createElement('div');
+            const width = marker.properties.iconSize[0];
+            const height = marker.properties.iconSize[1];
+            el.className = 'marker';
+            el.style.backgroundImage = `url("https://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-HD.png")`;
+            el.style.width = `${width}px`;
+            el.style.height = `${height}px`;
+            el.style.backgroundSize = '100%';
+
+            el.addEventListener('click', () => {
+                window.alert(marker.properties.message);
+            });
+
+            // Add markers to the map.
+            new mapboxgl.Marker(el)
+                .setLngLat(marker.geometry.coordinates)
+                .addTo(map);
+        }
+
+    </script>
+</body>
+</html>
