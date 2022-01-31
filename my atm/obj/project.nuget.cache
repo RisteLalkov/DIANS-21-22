@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LIL1Hu3JykR0xmrQ83HI+Mc9c91UX48Zdu77bX0h2ODTzUy1XDZUVP8X26u+5hXKEz32E64X9xUfGu5TkqMQ5g==",
+  "dgSpecHash": "oyuxEFejc4+KerZvq3OlCarpBBX/BdU7xL8IwLidCxA+YAQiOej/AXLdPjSmfRKX458a0dOCPh+YpylJbctUqw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Riki\\source\\repos\\my atm\\my atm\\my atm.csproj",
   "expectedPackageFiles": [
@@ -52,6 +52,7 @@
     "C:\\Users\\Riki\\.nuget\\packages\\microsoft.identitymodel.tokens\\5.5.0\\microsoft.identitymodel.tokens.5.5.0.nupkg.sha512",
     "C:\\Users\\Riki\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\Riki\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Riki\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.14\\microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512",
     "C:\\Users\\Riki\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\3.1.5\\microsoft.visualstudio.web.codegeneration.3.1.5.nupkg.sha512",
     "C:\\Users\\Riki\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.contracts\\3.1.5\\microsoft.visualstudio.web.codegeneration.contracts.3.1.5.nupkg.sha512",
     "C:\\Users\\Riki\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\3.1.5\\microsoft.visualstudio.web.codegeneration.core.3.1.5.nupkg.sha512",

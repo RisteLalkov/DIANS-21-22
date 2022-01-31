@@ -10,6 +10,10 @@
     <ShowAllFiles>false</ShowAllFiles>
     <View_SelectedScaffolderID>RazorViewEmptyScaffolder</View_SelectedScaffolderID>
     <View_SelectedScaffolderCategoryPath>root/Common/MVC/View</View_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>C:\Users\Riki\source\repos\my atm\my atm\Properties\PublishProfiles\myatm20211227184653 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Riki\source\repos\my atm\my atm\Properties\PublishProfiles\registry.hub.docker.com_rikilalkov.pubxml</NameOfLastUsedPublishProfile>
+    <ActiveDebugProfile>Docker</ActiveDebugProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
 </Project>
